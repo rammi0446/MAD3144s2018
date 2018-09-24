@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+</head>
+<body onload="startTime();">
+<img id="img1" />
+<script>
+var imgArray = new Array("bg.jpg","bg1.jpg","bg2.jpg");
+var imgCount = 0;
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+
+
+
+function startTime() {
+var imag = shuffle(imgArray);
+    if(imgCount == imag.length) {
+        imgCount = 0;
+    }
+    document.getElementById("img1").src = imag[imgCount];
+    imgCount++;
+    // setTimeout("startTime()", 5000);
+}
+</script>
+</body>
+</html>
